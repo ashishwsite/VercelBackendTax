@@ -1,6 +1,8 @@
 var  mongoose=require('mongoose')
 require('dotenv').config()
-const mongourl=process.env.URL
+// const mongourl=process.env.URL
+const mongourl='mongodb+srv://ashish:12345@cluster0.g45nrog.mongodb.net/texdb'
+
 // console.log(mongourl)
 var connectMongoose=async()=>{
     try {

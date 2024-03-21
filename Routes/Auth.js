@@ -19,10 +19,10 @@ router.get('/admin',async(req,res)=>{
 router.post('/contact', async(req,res)=>{
     var bodyData=req.body
     console.log("req body data ",bodyData)
-    let user = await User.findOne({ email: req.body.email });
-    if (user) {
-      return res.status(400).json({ "success":"false"  })
-    }
+    // let user = await User.findOne({ email: req.body.email });
+    // if (user) {
+    //   return res.status(400).json({ "success":"false"  })
+    // }
    user = await User.create({
         name: req.body.name,
         phone: req.body.phone,
