@@ -2,6 +2,7 @@
 const express= require('express')
 var cors=require('cors')
 require('./db')
+const port=process.env.PORT||3000
 const path = require("path");
 const app=express()
 app.use(express.json())
@@ -16,8 +17,8 @@ app.get("/",(req,res)=>{
   app.get('/test',(req,res)=>{
     res.json("this is test page")
   })
-app.listen(1000,()=>{
-    console.log(` backend  is listening at http://localhost:1000`)
+app.listen(port,()=>{
+    console.log(` backend  is listening at http://localhost:${port}`)
 })
 // this is not running because build folder not made 
 // bad practice of deployment ,because at every change bilid is recreated

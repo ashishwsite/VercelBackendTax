@@ -5,6 +5,16 @@ const router=express.Router();
 router.get('/name',async(req,res)=>{
   return res.json({"name":"ramsashhish"})
 })
+router.get('/admin',async(req,res)=>{
+  try{
+  let user=await User .find()
+  res.json(user)
+  }
+  catch(err){
+    res.json(err.message)
+  }
+  
+})
 // /contact page se aa jaega jab request aayega 
 router.post('/contact', async(req,res)=>{
     var bodyData=req.body
