@@ -8,7 +8,7 @@ router.get('/name',async(req,res)=>{
 router.get('/admin',async(req,res)=>{
   try{
   let user=await User .find()
-  res.json(user)
+  return res.json(user)
   }
   catch(err){
     res.json(err.message)
