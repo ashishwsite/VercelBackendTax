@@ -1,8 +1,14 @@
 var  mongoose=require('mongoose')
-const URL=process.env.URL
-const mongooseUrl=URL
+require('dotenv').config()
+const mongourl=process.env.URL
+// console.log(mongourl)
 var connectMongoose=async()=>{
-    await mongoose.connect(mongooseUrl);
+    try {
+        await mongoose.connect(mongourl);
+        console.log("Connected to MongoDB");
+    } catch (error) {
+        console.error("Error connecting to MongoDB:", error);
+    }
 }
 // module.exports=connectMongoose;
 connectMongoose();
