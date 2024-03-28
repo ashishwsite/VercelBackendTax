@@ -5,7 +5,7 @@ const router=express.Router();
 router.get('/name',async(req,res)=>{
   return res.json({"name":"ramsashhish"})
 })
-router.get('/admin',async(req,res)=>{
+router.post('/admin',async(req,res)=>{
   try{
   let user=await User .find()
   return res.json(user)
