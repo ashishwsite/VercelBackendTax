@@ -7,8 +7,13 @@ router.get('/name',async(req,res)=>{
 })
 router.post('/admin',async(req,res)=>{
   try{
-  let user=await User .find()
-  return res.json(user)
+  
+  if(req.body.email==="1508ramashish@gmail.com" && req.body.password===12345678)
+  {
+    let user=await User .find()
+    return res.json(user)
+  }
+  else return res.json({success:'false'})
   }
   catch(err){
     res.json(err.message)
