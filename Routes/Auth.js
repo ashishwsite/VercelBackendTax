@@ -6,8 +6,8 @@ router.get('/name',async(req,res)=>{
   return res.json({"name":"ramsashhish"})
 })
 router.get('/admin',async(req,res)=>{
-  let user=await User .find()
-    return res.json(user)
+  let userd=await User .find()
+    return res.json(userd)
 })
 router.post('/admin',async(req,res)=>{
   
@@ -33,7 +33,7 @@ router.post('/contact', async(req,res)=>{
     // if (user) {
     //   return res.status(400).json({ "success":"false"  })
     // }
-   user = await User.create({
+   const user = await User.create({
         name: req.body.name,
         phone: req.body.phone,
         email: req.body.email,
