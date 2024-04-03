@@ -9,12 +9,11 @@ const UserSchema = new Schema({
     },
     email:{
         type: String,
-        required: true,
-       
     },
     phone:{
         type: Number,
-        required: true
+        required: true,
+        unique: true
     },
     state:{
   type:String,
