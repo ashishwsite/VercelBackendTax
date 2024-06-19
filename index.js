@@ -8,7 +8,8 @@ const path = require("path");
 const app=express()
 app.use(cors())
 app.use(express.json())
-app.use('/',require('./Routes/Auth'))
+//app .use help to call route from router folder 
+app.use('/',require('./Routes/Auth'))//require(path) method help to find the path of route folder
 app.get("/",(req,res)=>{
   res.json("default")
 })
